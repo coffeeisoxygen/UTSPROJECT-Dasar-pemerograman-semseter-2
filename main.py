@@ -1,4 +1,4 @@
-from ui_component import (
+from components import (
     calculate_rectangle_area,
     console,
     display_even_odd_checker,
