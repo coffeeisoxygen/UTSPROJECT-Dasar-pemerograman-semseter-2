@@ -97,6 +97,86 @@ def display_footer():
     console.print(Panel(footer_text, border_style="dim", padding=(0, 0)))
 
 
+def handle_choice_1():
+    console.print("\n[bold green]🔺 KALKULATOR LUAS SEGITIGA 🔺[/bold green]")
+    alas = get_positive_float("Masukkan alas segitiga: ")
+    tinggi = get_positive_float("Masukkan tinggi segitiga: ")
+    process_with_spinner("Menghitung luas segitiga...")
+    luas = hitung_segitiga(alas, tinggi)
+
+    result_panel = Panel(
+        f"""
+        [bold]📏 Alas[/bold]: {alas} satuan
+        [bold]📐 Tinggi[/bold]: {tinggi} satuan
+
+        [bold cyan]🧮 Rumus[/bold cyan]: Luas = 1/2 × Alas × Tinggi
+        [bold cyan]🧮 Kalkulasi[/bold cyan]: Luas = 1/2 × {alas} × {tinggi}
+
+        [bold green]📊 Hasil[/bold green]: {luas} satuan persegi
+        """,
+        title="[bold green]Hasil Perhitungan Segitiga[/bold green]",
+        border_style="green",
+        expand=False,
+    )
+    console.print(result_panel)
+
+
+def handle_choice_2():
+    console.print("\n[bold blue]📏 KALKULATOR LUAS PERSEGI PANJANG 📏[/bold blue]")
+    panjang = get_positive_float("Masukkan panjang persegi panjang: ")
+    lebar = get_positive_float("Masukkan lebar persegi panjang: ")
+    process_with_spinner("Menghitung luas persegi panjang...")
+    luas = hitung_persegipanjang(panjang, lebar)
+
+    result_panel = Panel(
+        f"""
+        [bold]📏 Panjang[/bold]: {panjang} satuan
+        [bold]📏 Lebar[/bold]: {lebar} satuan
+
+        [bold cyan]🧮 Rumus[/bold cyan]: Luas = Panjang × Lebar
+        [bold cyan]🧮 Kalkulasi[/bold cyan]: Luas = {panjang} × {lebar}
+
+        [bold blue]📊 Hasil[/bold blue]: {luas} satuan persegi
+        """,
+        title="[bold blue]Hasil Perhitungan Persegi Panjang[/bold blue]",
+        border_style="blue",
+        expand=False,
+    )
+    console.print(result_panel)
+
+
+def handle_choice_3():
+    console.print("\n[bold magenta]🔢 PENENTU GANJIL GENAP 🔢[/bold magenta]")
+    angka = get_integer("Masukkan angka: ")
+    process_with_spinner("Memeriksa bilangan...")
+    hasil = cek_ganjil_genap(angka)
+    color = "green" if hasil == "Genap" else "yellow"
+    emoji = "🟢" if hasil == "Genap" else "🟡"
+
+    result_panel = Panel(
+        f"""
+        [bold]🔢 Angka yang diperiksa[/bold]: {angka}
+
+        [bold cyan]🧮 Metode[/bold cyan]: Angka mod 2 = {angka % 2}
+        [bold cyan]🧮 Kesimpulan[/bold cyan]: {emoji} Bilangan {hasil}
+
+        [bold {color}]📊 Hasil[/bold {color}]: Angka [bold]{angka}[/bold] adalah bilangan [bold]{hasil}[/bold]
+        """,
+        title="[bold magenta]Hasil Pemeriksaan Bilangan[/bold magenta]",
+        border_style="magenta",
+        expand=False,
+    )
+    console.print(result_panel)
+
+
+def handle_choice_4():
+    with console.screen() as screen:
+        for i in range(3, 0, -1):
+            goodbye = f"[bold yellow]Terima kasih telah menggunakan aplikasi ini.\nKeluar dalam {i} detik...[/bold yellow]"
+            screen.update(Panel(goodbye, border_style="red", padding=(2, 4)))
+            time.sleep(1)
+
+
 def main():
     try:
         display_splash_screen()
@@ -109,90 +189,14 @@ def main():
             choice = input("\nPilih menu (1-4): ")
 
             if choice == "1":
-                console.print(
-                    "\n[bold green]🔺 KALKULATOR LUAS SEGITIGA 🔺[/bold green]"
-                )
-                alas = get_positive_float("Masukkan alas segitiga: ")
-                tinggi = get_positive_float("Masukkan tinggi segitiga: ")
-                process_with_spinner("Menghitung luas segitiga...")
-                luas = hitung_segitiga(alas, tinggi)
-
-                result_panel = Panel(
-                    f"""
-                    [bold]📏 Alas[/bold]: {alas} satuan
-                    [bold]📐 Tinggi[/bold]: {tinggi} satuan
-
-                    [bold cyan]🧮 Rumus[/bold cyan]: Luas = 1/2 × Alas × Tinggi
-                    [bold cyan]🧮 Kalkulasi[/bold cyan]: Luas = 1/2 × {alas} × {tinggi}
-
-                    [bold green]📊 Hasil[/bold green]: {luas} satuan persegi
-                    """,
-                    title="[bold green]Hasil Perhitungan Segitiga[/bold green]",
-                    border_style="green",
-                    expand=False,
-                )
-                console.print(result_panel)
-
+                handle_choice_1()
             elif choice == "2":
-                console.print(
-                    "\n[bold blue]📏 KALKULATOR LUAS PERSEGI PANJANG 📏[/bold blue]"
-                )
-                panjang = get_positive_float("Masukkan panjang persegi panjang: ")
-                lebar = get_positive_float("Masukkan lebar persegi panjang: ")
-                process_with_spinner("Menghitung luas persegi panjang...")
-                luas = hitung_persegipanjang(panjang, lebar)
-
-                result_panel = Panel(
-                    f"""
-                    [bold]📏 Panjang[/bold]: {panjang} satuan
-                    [bold]📏 Lebar[/bold]: {lebar} satuan
-
-                    [bold cyan]🧮 Rumus[/bold cyan]: Luas = Panjang × Lebar
-                    [bold cyan]🧮 Kalkulasi[/bold cyan]: Luas = {panjang} × {lebar}
-
-                    [bold blue]📊 Hasil[/bold blue]: {luas} satuan persegi
-                    """,
-                    title="[bold blue]Hasil Perhitungan Persegi Panjang[/bold blue]",
-                    border_style="blue",
-                    expand=False,
-                )
-                console.print(result_panel)
-
+                handle_choice_2()
             elif choice == "3":
-                console.print(
-                    "\n[bold magenta]🔢 PENENTU GANJIL GENAP 🔢[/bold magenta]"
-                )
-                angka = get_integer("Masukkan angka: ")
-                process_with_spinner("Memeriksa bilangan...")
-                hasil = cek_ganjil_genap(angka)
-                color = "green" if hasil == "Genap" else "yellow"
-                emoji = "🟢" if hasil == "Genap" else "🟡"
-
-                result_panel = Panel(
-                    f"""
-                    [bold]🔢 Angka yang diperiksa[/bold]: {angka}
-
-                    [bold cyan]🧮 Metode[/bold cyan]: Angka mod 2 = {angka % 2}
-                    [bold cyan]🧮 Kesimpulan[/bold cyan]: {emoji} Bilangan {hasil}
-
-                    [bold {color}]📊 Hasil[/bold {color}]: Angka [bold]{angka}[/bold] adalah bilangan [bold]{hasil}[/bold]
-                    """,
-                    title="[bold magenta]Hasil Pemeriksaan Bilangan[/bold magenta]",
-                    border_style="magenta",
-                    expand=False,
-                )
-                console.print(result_panel)
-
+                handle_choice_3()
             elif choice == "4":
-                with console.screen() as screen:
-                    for i in range(3, 0, -1):
-                        goodbye = f"[bold yellow]Terima kasih telah menggunakan aplikasi ini.\nKeluar dalam {i} detik...[/bold yellow]"
-                        screen.update(
-                            Panel(goodbye, border_style="red", padding=(2, 4))
-                        )
-                        time.sleep(1)
+                handle_choice_4()
                 break
-
             else:
                 console.print(
                     Panel(
