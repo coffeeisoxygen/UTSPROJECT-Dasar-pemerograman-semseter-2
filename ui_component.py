@@ -95,7 +95,7 @@ def display_footer():
     console.print(Panel(footer_text, border_style="dim", padding=(0, 0)))
 
 
-def handle_choice_1():
+def triangle_area_calculator():
     """UI untuk kalkulator luas segitiga."""
     console.print("\n[bold green]🔺 KALKULATOR LUAS SEGITIGA 🔺[/bold green]")
     alas = get_positive_float("Masukkan alas segitiga: ")
@@ -120,7 +120,7 @@ def handle_choice_1():
     console.print(result_panel)
 
 
-def handle_choice_2():
+def calculate_rectangle_area():
     """UI untuk kalkulator luas persegi panjang."""
     console.print("\n[bold blue]📏 KALKULATOR LUAS PERSEGI PANJANG 📏[/bold blue]")
     panjang = get_positive_float("Masukkan panjang persegi panjang: ")
@@ -145,7 +145,7 @@ def handle_choice_2():
     console.print(result_panel)
 
 
-def handle_choice_3():
+def display_even_odd_checker():
     """UI untuk penentu bilangan ganjil genap."""
     console.print("\n[bold magenta]🔢 PENENTU GANJIL GENAP 🔢[/bold magenta]")
     angka = get_integer("Masukkan angka: ")
@@ -170,7 +170,7 @@ def handle_choice_3():
     console.print(result_panel)
 
 
-def handle_choice_4():
+def execute_exit_sequence():
     """UI untuk exit sequence."""
     with console.screen() as screen:
         for i in range(3, 0, -1):

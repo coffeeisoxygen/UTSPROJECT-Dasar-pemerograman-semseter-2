@@ -1,15 +1,15 @@
 from ui_component import (
+    calculate_rectangle_area,
     console,
+    display_even_odd_checker,
     display_footer,
     display_header,
     display_interrupt_message,
     display_invalid_choice,
     display_menu,
     display_splash_screen,
-    handle_choice_1,
-    handle_choice_2,
-    handle_choice_3,
-    handle_choice_4,
+    execute_exit_sequence,
+    triangle_area_calculator,
 )
 
 
@@ -26,13 +26,13 @@ def main():
             choice = input("\nPilih menu (1-4): ")
 
             if choice == "1":
-                handle_choice_1()
+                triangle_area_calculator()
             elif choice == "2":
-                handle_choice_2()
+                calculate_rectangle_area()
             elif choice == "3":
-                handle_choice_3()
+                display_even_odd_checker()
             elif choice == "4":
-                handle_choice_4()
+                execute_exit_sequence()
                 break
             else:
                 display_invalid_choice()
