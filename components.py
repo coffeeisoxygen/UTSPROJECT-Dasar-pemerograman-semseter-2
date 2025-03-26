@@ -90,8 +90,8 @@ def process_with_spinner(message, duration=1.0):
 
 
 def display_footer():
-    """Display footer information."""
-    footer_text = "[bold]© 2025 A Hasan Maki • UTS Dasar Pemrograman • Tekan CTRL+C untuk keluar langsung[/bold]"
+    """Display footer information with GitHub icon and username."""
+    footer_text = "[bold]© 2025 [link=https://github.com/coffeeisoxygen] coffeeisoxygen[/link][/bold] • UTS Dasar Pemrograman • Tekan CTRL+C untuk keluar langsung • "
     console.print(Panel(footer_text, border_style="dim", padding=(0, 0)))
 
 
