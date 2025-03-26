@@ -16,7 +16,13 @@ Proyek ini adalah aplikasi berbasis terminal yang dibuat untuk memenuhi tugas UT
 1. Pastikan Anda memiliki Python terinstal di sistem Anda.
 2. Clone repository ini atau unduh sebagai ZIP.
 3. Buka terminal dan navigasikan ke direktori proyek.
-4. Jalankan perintah berikut:
+4. Instal semua dependensi yang diperlukan:
+
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+5. Jalankan perintah berikut:
 
    ```sh
    python main.py
@@ -30,6 +36,7 @@ Proyek ini adalah aplikasi berbasis terminal yang dibuat untuk memenuhi tugas UT
 ├── feature.py
 ├── main.py
 ├── ReadME.md
+├── requirements.txt
 └── validator.py
 ```
 
