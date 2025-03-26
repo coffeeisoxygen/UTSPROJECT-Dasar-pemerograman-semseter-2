@@ -27,7 +27,7 @@ def display_header():
 
     info = """
     [bold yellow]Tugas Project UTS Mata Kuliah : Dasar Pemerograman Semester 2
-    Dosen : Ibu Shintya
+    Dosen : Ibu Shinta Ayuningtias, S.Kom., M.Kom.
     MHS : A Hasan Maki
     NIM : 20240040032
     TI24B[/bold yellow]
