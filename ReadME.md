@@ -1,7 +1,5 @@
 # 📊 Project UTS Dasar Pemrograman
 
-![Project Logo](https://via.placeholder.com/150)
-
 ## 📋 Deskripsi Proyek
 
 Proyek ini adalah aplikasi berbasis terminal yang dibuat untuk memenuhi tugas UTS mata kuliah Dasar Pemrograman. Aplikasi ini menyediakan beberapa fitur kalkulator dan pemeriksa bilangan ganjil/genap.
